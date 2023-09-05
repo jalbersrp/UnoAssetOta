@@ -9,13 +9,13 @@ This program exposes a triggerOta() custom function on the particle console for 
 - This is still a work in progress!
 - Only tested on Arduino UNO (ATMega328p) with the official Arduino bootloader as target.
 - Only tested on Photon 2 as host.
-- Only tested using Adafruit's 4-CH BSS128 bidirectional level shifter (PN 757).
+- Only tested using Adafruit's 4-CH BSS138 bidirectional level shifter (PN 757).
 
 ## Hardware
 
-* Host:   Photon 2
-* Target: ATMega328P (with arduino bootloader)
-* Level shifter: Adafruit 4-CH BSS128 level shifter (PN #757)
+* Host:   [Photon 2](https://store.particle.io/products/photon-2)
+* Target: [Arduino UNO](https://store.arduino.cc/products/arduino-uno-rev3) (or detached ATMega328P with arduino bootloader)
+* Level shifter: Adafruit 4-CH BSS138 level shifter [PN #757](https://www.adafruit.com/product/757)
 
 ## Notes PLEASE READ!
 
@@ -26,7 +26,6 @@ This program exposes a triggerOta() custom function on the particle console for 
 - No verification of the uploaded code is done in this example.
 
 ## Wiring table
-
 
 | Photon 2 | Level Shifter | Uno (ATMega328p) |
 | ---------- | --------------- | ------------------ |
@@ -40,6 +39,8 @@ This program exposes a triggerOta() custom function on the particle console for 
 | -        | B2            | TX (D1)          |
 | D19      | A3            | -                |
 | -        | B3            | RST              |
+
+![Wiring example](images/wiring_example.jpg)
 
 ## How it works: Asset OTA
 
@@ -101,10 +102,13 @@ What worked for me:
 
 ## Using this example code
 
-Just go to your particle console and look for your device. Under the functions section, you will see one called triggerOTA. Press the call button and your photon will do the rest. If you want to see what's happening, open your serial monitor before calling the function to see the output logs.
-![Console view](/Users/alberto/Documents/Particle_Workbench/AssetOTA/UnoAssetOta/Images/Console function.png)
-![Example of the debug output](/Users/alberto/Documents/Particle_Workbench/AssetOTA/UnoAssetOta/Terminal output example.png)
+Just go to your particle console and look for your device. Under the functions section, you will see one called triggerOTA. Press the call button and your photon will do the rest. 
 
+![Console view](images/Console_function.jpg)
+
+If you want to see what's happening, open your serial monitor before calling the function to see the output logs.
+
+![Example of the debug output](images/Terminal_output_example.jpg)
 
 ## ToDo:
 
