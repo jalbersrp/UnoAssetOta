@@ -16,6 +16,9 @@ This program exposes a triggerOta() custom function on the particle console for 
 * Host:   [Photon 2](https://store.particle.io/products/photon-2)
 * Target: [Arduino UNO](https://store.arduino.cc/products/arduino-uno-rev3) (or detached ATMega328P with arduino bootloader)
 * Level shifter: Adafruit 4-CH BSS138 level shifter [PN #757](https://www.adafruit.com/product/757)
+* Host:   [Photon 2](https://store.particle.io/products/photon-2)
+* Target: [Arduino UNO](https://store.arduino.cc/products/arduino-uno-rev3) (or detached ATMega328P with arduino bootloader)
+* Level shifter: Adafruit 4-CH BSS138 level shifter [PN #757](https://www.adafruit.com/product/757)
 
 ## Notes PLEASE READ!
 
