@@ -12,11 +12,11 @@ int raiseTrigger(String extra);
 void setup();
 void loop();
 #line 3 "/Users/alberto/Documents/Particle_Workbench/AssetOTA/UnoAssetOta/src/UnoAssetOta.ino"
-#define defaultDelay  50    //Delay for bootloader process
-#define resetPin      D19   //IO for asserting reset to arduino
-#define serial1RxPin  D9    //Serial1 RX pin for asset ota
-#define serial1TxPin  D8    //Serial1 TX pin for asset ota
-#define maxSyncTries  5     //Max retries for bootloader sync
+#define defaultDelay  50          //Delay for bootloader process
+#define resetPin      D19         //IO for asserting reset to arduino
+#define serial1RxPin  D9          //Serial1 RX pin for asset ota
+#define serial1TxPin  D8          //Serial1 TX pin for asset ota
+#define maxSyncTries  5           //Max retries for bootloader sync
 #define assetBinName  "UnoFW.bin" //Specifies the name expected for the asset firmware bin
 
 //Global variables
@@ -24,7 +24,7 @@ int readBuff[16], readBuffLength;
 bool updateTrigger = 0;
 
 //Log handler
-SerialLogHandler logHandler(LOG_LEVEL_NONE,{{ "app", LOG_LEVEL_ALL }});
+SerialLogHandler logHandler(LOG_LEVEL_INFO);
 
 void readAssetBytes()
 {
@@ -55,8 +55,7 @@ void releaseAssetPorts()
   Just be careful of not using the IDE upload at the same time the photon
   is writing / reading on the target
   */
-  Serial1.end();
-  //Serial1.end() does not revert the IOs used as INPUT,
+  Serial1.end();                  //Serial1.end() does not revert the IOs used as INPUT,
   pinMode(serial1RxPin,INPUT);
   pinMode(serial1TxPin,INPUT);
   pinMode(resetPin, INPUT);
@@ -70,11 +69,11 @@ int updateArduinoUno(ApplicationAsset& asset)
   
   //1.- Configures the serial port to the target
   Log.info("Configuring serial port to the target");
-  Serial1.begin(115200);        //115200 for arduino UNO, 56700 for ProMini
-  Serial1.flush();              //Wait for any outcoming data to exit the serial
-  pinMode(resetPin, OUTPUT);    //Configure pin to target reset as output and high
+  Serial1.begin(115200);          //115200 for arduino UNO, 56700 for ProMini
+  Serial1.flush();                //Wait for any outcoming data to exit the serial
+  pinMode(resetPin, OUTPUT);      //Configure pin to target reset as output and high
   digitalWrite(resetPin, HIGH); 
-  delay(5000);                  //Waits to te user to enable serial monitor
+  delay(5000);                    //Waits to te user to enable serial monitor
 
   //2.- Reset the target device
   Log.info("Resetting the target");
@@ -342,7 +341,7 @@ void setup()
 
 void loop()
 {
-  if (updateTrigger == 1)                                     //If the update flag is raised
+  if (updateTrigger == 1)                                     //Checks on every loop if the update flag is raised
   {
     Log.info("Update trigger enabled.");
     for(auto& asset: System.assetsAvailable())                //For every asset listed

@@ -12,7 +12,7 @@ int readBuff[16], readBuffLength;
 bool updateTrigger = 0;
 
 //Log handler
-SerialLogHandler logHandler(LOG_LEVEL_NONE,{{ "app", LOG_LEVEL_ALL }});
+SerialLogHandler logHandler(LOG_LEVEL_INFO);
 
 void readAssetBytes()
 {

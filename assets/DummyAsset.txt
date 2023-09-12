@@ -1,1 +1,1 @@
-This is another empty dummy asset.
+This is an empty dummy asset.

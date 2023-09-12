@@ -95,7 +95,7 @@ void loop()
 }
 ```
 
-## Preparig the bundle
+## Preparing the bundle
 At the time of writing this, the Asset OTA is still in beta and the commands on the Workbench CLI still don't take the bundles. But certainly this will change soon.
 
 What worked for me:
