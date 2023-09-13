@@ -1,7 +1,6 @@
-.DS_Store/*
-
 UnoAssetOta.cpp
 *.lib
 *.cpp
 target/*
 .vscode/*
+.DS_Store
