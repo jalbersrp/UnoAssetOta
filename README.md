@@ -75,6 +75,10 @@ You need to add the pre-compiled Arduino sketch to this project before compiling
    * On Mac and Unix systems you can use [hex2bin](https://github.com/Keidan/hex2bin/blob/master/README.md)
      * `$ hex2bin program.ino.hex`
      * You will obtain a .bin file with the same name.
+   * There is also a python script in the "extras" folder
+     * Open your terminal in the folder of the script
+     * Run `$ python binconvert.py /path_of_the_file/file.ino.hex`
+     * You will see the converted .bin file in your script folder
 
 ### Example sketch
 
